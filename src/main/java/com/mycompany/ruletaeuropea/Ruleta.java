@@ -17,52 +17,43 @@ public class Ruleta {
     private ArrayList<NumeroColorido> listaCasillas;
     private Random semillaRandom;
     public Ruleta(){
-        this.casillaGenerada = new NumeroColorido(0,"");
         this.listaCasillas = new ArrayList<NumeroColorido>(37);
         this.semillaRandom = new Random(new Date().getTime());
-  
-        listaCasillas.add(new NumeroColorido(0, "verde"));
-        listaCasillas.add(new NumeroColorido(1, "rojo"));
-        listaCasillas.add(new NumeroColorido(2, "negro"));
-        listaCasillas.add(new NumeroColorido(3, "rojo"));
-        listaCasillas.add(new NumeroColorido(4, "negro"));
-        listaCasillas.add(new NumeroColorido(5, "rojo"));
-        listaCasillas.add(new NumeroColorido(6, "negro"));
-        listaCasillas.add(new NumeroColorido(7, "rojo"));
-        listaCasillas.add(new NumeroColorido(8, "negro"));
-        listaCasillas.add(new NumeroColorido(9, "rojo"));
-        listaCasillas.add(new NumeroColorido(10, "negro"));
-        listaCasillas.add(new NumeroColorido(11, "negro"));
-        listaCasillas.add(new NumeroColorido(12, "rojo"));
-        listaCasillas.add(new NumeroColorido(13, "negro"));
-        listaCasillas.add(new NumeroColorido(14, "rojo"));
-        listaCasillas.add(new NumeroColorido(15, "negro"));
-        listaCasillas.add(new NumeroColorido(16, "rojo"));
-        listaCasillas.add(new NumeroColorido(17, "negro"));
-        listaCasillas.add(new NumeroColorido(18, "rojo"));
-        listaCasillas.add(new NumeroColorido(19, "rojo"));
-        listaCasillas.add(new NumeroColorido(20, "negro"));
-        listaCasillas.add(new NumeroColorido(21, "rojo"));
-        listaCasillas.add(new NumeroColorido(22, "negro"));
-        listaCasillas.add(new NumeroColorido(23, "rojo"));
-        listaCasillas.add(new NumeroColorido(24, "negro"));
-        listaCasillas.add(new NumeroColorido(25, "rojo"));
-        listaCasillas.add(new NumeroColorido(26, "negro"));
-        listaCasillas.add(new NumeroColorido(27, "rojo"));
-        listaCasillas.add(new NumeroColorido(28, "negro"));
-        listaCasillas.add(new NumeroColorido(29, "negro"));
-        listaCasillas.add(new NumeroColorido(30, "rojo"));
-        listaCasillas.add(new NumeroColorido(31, "negro"));
-        listaCasillas.add(new NumeroColorido(32, "rojo"));
-        listaCasillas.add(new NumeroColorido(33, "negro"));
-        listaCasillas.add(new NumeroColorido(34, "rojo"));
-        listaCasillas.add(new NumeroColorido(35, "negro"));
-        listaCasillas.add(new NumeroColorido(36, "rojo"));
+        
+        this.casillaGenerada = new NumeroColorido(0,"");
+        for(int i = 1; i < 37;i++){
+            if(i > 0 && i < 11){
+                if(i % 2 != 0){
+                    listaCasillas.add(new NumeroColorido(i, "rojo"));
+                }else{
+                    listaCasillas.add(new NumeroColorido(i, "negro"));
+                }
+            }else if(i > 10 && i < 19){
+                if(i % 2 != 0){
+                    listaCasillas.add(new NumeroColorido(i, "negro"));
+                }else{
+                    listaCasillas.add(new NumeroColorido(i, "rojo"));
+                }
+            }else if(i > 18 && i < 29){
+                if(i % 2 != 0){
+                    listaCasillas.add(new NumeroColorido(i, "rojo"));
+                }else{
+                    listaCasillas.add(new NumeroColorido(i, "negro"));
+                }
+            }else{
+                if(i % 2 != 0){
+                    listaCasillas.add(new NumeroColorido(i, "negro"));
+                }else{
+                    listaCasillas.add(new NumeroColorido(i, "rojo"));
+                }
+            }
+        }
     }
     public int generadorNumero(){
         int numeroGenerado = 0;
         numeroGenerado = semillaRandom.nextInt(37);
-        JOptionPane.showMessageDialog(null, "El numero es: " + numeroGenerado);
+        JOptionPane.showMessageDialog(null, "El numero es: " + listaCasillas.get(numeroGenerado).getNumero()
+        + "El color es: " + listaCasillas.get(numeroGenerado).getColor());
         return numeroGenerado;
     }
 }
