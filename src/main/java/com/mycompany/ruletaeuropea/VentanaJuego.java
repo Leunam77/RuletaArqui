@@ -37,7 +37,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1050, 550));
         setResizable(false);
 
         jButton1.setText("Girar");
@@ -47,22 +46,22 @@ public class VentanaJuego extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\mesaRuletav2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\mesaRuletav2.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\iloveimg-resized\\ficha1.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\ficha1.png")); // NOI18N
         jLabel3.setText("jLabel3");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\iloveimg-resized\\ficha5.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\ficha5.png")); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\iloveimg-resized\\ficha10.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\ficha10.png")); // NOI18N
         jLabel4.setText("jLabel4");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\iloveimg-resized\\ficha20.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\ficha20.png")); // NOI18N
         jLabel5.setText("jLabel5");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Desktop\\SEMESTRE-2-2023\\ARQUI\\iloveimg-resized\\ficha50.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\images\\ficha50.png")); // NOI18N
         jLabel6.setText("jLabel6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,7 +100,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
