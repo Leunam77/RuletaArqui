@@ -1,4 +1,7 @@
 com\mycompany\ruletaeuropea\VentanaJuego$1.class
+com\mycompany\ruletaeuropea\NumeroColorido.class
 com\mycompany\ruletaeuropea\RuletaEuropea.class
-com\mycompany\ruletaeuropea\VentanaJuego$2.class
+com\mycompany\ruletaeuropea\Mesa.class
+com\mycompany\ruletaeuropea\Ruleta.class
 com\mycompany\ruletaeuropea\VentanaJuego.class
+com\mycompany\ruletaeuropea\VentanaJuego$2.class
