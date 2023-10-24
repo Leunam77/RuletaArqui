@@ -20,7 +20,7 @@ public class Ruleta {
         this.listaCasillas = new ArrayList<NumeroColorido>(37);
         this.semillaRandom = new Random(new Date().getTime());
         
-        this.casillaGenerada = new NumeroColorido(0,"");
+        listaCasillas.add(new NumeroColorido(0, "verde"));
         for(int i = 1; i < 37;i++){
             if(i > 0 && i < 11){
                 if(i % 2 != 0){
