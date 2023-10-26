@@ -12,5 +12,4 @@ public class RuletaEuropea {
         VentanaJuego ventana = new VentanaJuego();
         ventana.setVisible(true);
     }
-    
 }

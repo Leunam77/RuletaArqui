@@ -9,17 +9,17 @@ package com.mycompany.ruletaeuropea;
  * @author jmanu
  */
 public class FichaApuesta {
-    private int cantidadFicha;
-    private int montoFicha;
+    private int monto;
+    private int numeroPleno;
 
-    public FichaApuesta(int cantidadFichas, int montoFicha) {
-        this.cantidadFicha = cantidadFichas;
-        this.montoFicha = montoFicha;
+    public FichaApuesta(int monto, int numeroPleno) {
+        this.monto = monto;
+        this.numeroPleno = numeroPleno;
     }
-    public int getCantidadFicha(){
-        return   this.cantidadFicha;
+    public int  getMontoFicha(){
+        return this.monto;
     }
-    public int getMontoFicha(){
-        return   this.montoFicha;
+    public int  getNumeroPleno(){
+        return this.numeroPleno;
     }
 }

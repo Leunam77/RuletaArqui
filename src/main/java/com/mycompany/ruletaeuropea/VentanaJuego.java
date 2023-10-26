@@ -4,6 +4,8 @@
  */
 package com.mycompany.ruletaeuropea;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jmanu
@@ -19,6 +21,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         initComponents();
         juegoRuleta = new Ruleta();
         juegoMesa = new Juego();
+        jLabel14.setText(juegoMesa.jugador.nombre);
+        jLabel13.setText(Integer.toString(juegoMesa.jugador.dineroTotal));
     }
 
     /**
@@ -30,7 +34,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,20 +43,29 @@ public class VentanaJuego extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Girar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setText("Girar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 410, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mesaRuletav2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mesaRuletav2-transformed.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -63,6 +77,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 6, 850, 390));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -71,6 +86,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 402, 60, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha5.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -79,6 +95,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 402, 60, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha10.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -87,6 +104,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 402, 60, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha20.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -95,6 +113,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 402, 60, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha50.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -103,61 +122,36 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(611, 402, 60, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("jLabel7");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(299, 299, 299)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(17, 17, 17)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("NOMBRE: ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("MONTO: ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("jLabel13");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("jLabel14");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tapete2.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        juegoRuleta.generadorNumero();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
         int x = evt.getX();
@@ -168,12 +162,31 @@ public class VentanaJuego extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         int x = evt.getX();
         int y = evt.getY();
-        String plenoListo = juegoMesa.getmesaJuego().buscarCasilla(x,y);        
-        System.out.println(plenoListo);
+        if(juegoMesa.apuestasCerradas == false){
+            juegoMesa.buscarApuesta(x, y);
+            System.out.println("Apuesta especial tipo: " + juegoMesa.getmesaJuego().apuestaEspecial.tipo);
+            System.out.println("apuesta Pleno tipo: " + juegoMesa.getmesaJuego().apuestaRealizadaPleno.tipo);
+            juegoMesa.apostar();
+            jLabel13.setText(Integer.toString(juegoMesa.jugador.dineroTotal));
+            System.out.println("Pleno: " + juegoMesa.getmesaJuego().apuestaPleno.contenido());
+            System.out.println("Negro: " + juegoMesa.getmesaJuego().apuestaNegro.contenido());
+            System.out.println("Rojo: " + juegoMesa.getmesaJuego().apuestaRojo.contenido());
+            System.out.println("Impar" + juegoMesa.getmesaJuego().apuestaImpar.contenido());
+            System.out.println("Par " + juegoMesa.getmesaJuego().apuestaPar.contenido());
+            System.out.println("1-18: " + juegoMesa.getmesaJuego().apuesta118.contenido());
+            System.out.println("19-36: " + juegoMesa.getmesaJuego().apuesta1936.contenido());
+            System.out.println("PrimerDoce: " + juegoMesa.getmesaJuego().apuestaPrimerDoce.contenido());
+            System.out.println("SegundoDoce: " + juegoMesa.getmesaJuego().apuestaSegundoDoce.contenido());
+            System.out.println("TercerDoce: " + juegoMesa.getmesaJuego().apuestaTercerDoce.contenido());
+            System.out.println("Col Iz: " + juegoMesa.getmesaJuego().apuestaColIz.contenido());
+            System.out.println("Col Cen: " + juegoMesa.getmesaJuego().apuestaColCen.contenido());
+            System.out.println("Col Der: " + juegoMesa.getmesaJuego().apuestaColDer.contenido() + "\n");
+        }else{
+            System.err.println("No puede apostar");
+        }   
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-
         juegoMesa.setSeleccionFicha(1);
     }//GEN-LAST:event_jLabel3MouseClicked
 
@@ -190,8 +203,19 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        juegoMesa.setSeleccionFicha(100);
+        juegoMesa.setSeleccionFicha(50);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        juegoMesa.apuestasCerradas = true;
+        juegoRuleta.generarNumero();
+        int ganancias = juegoMesa.getmesaJuego().cacularGanancias(juegoRuleta.getCasillaGanadora());
+        juegoMesa.jugador.sumarDinero(ganancias);
+        jLabel13.setText(Integer.toString(juegoMesa.jugador.dineroTotal));
+        JOptionPane.showMessageDialog(null, "Ganaste: " + ganancias);
+        juegoMesa.limpiarApuestas();
+        juegoMesa.apuestasCerradas = false;
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,13 +253,19 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

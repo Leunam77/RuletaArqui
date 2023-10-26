@@ -49,11 +49,18 @@ public class Ruleta {
             }
         }
     }
-    public int generadorNumero(){
+    private void generadorNumero(){
         int numeroGenerado = 0;
         numeroGenerado = semillaRandom.nextInt(37);
+        casillaGenerada = listaCasillas.get(numeroGenerado);
         JOptionPane.showMessageDialog(null, "El numero es: " + listaCasillas.get(numeroGenerado).getNumero()
-        + "El color es: " + listaCasillas.get(numeroGenerado).getColor());
-        return numeroGenerado;
+        + "   El color es: " + listaCasillas.get(numeroGenerado).getColor());
     }
+    public void generarNumero(){
+        generadorNumero();
+    }
+    public NumeroColorido getCasillaGanadora(){
+        return casillaGenerada;
+    }
+    
 }

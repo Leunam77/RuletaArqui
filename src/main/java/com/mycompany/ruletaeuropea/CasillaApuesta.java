@@ -9,8 +9,8 @@ package com.mycompany.ruletaeuropea;
  * @author jmanu
  */
 public class CasillaApuesta{
-    private int x1,x2,y1,y2;
-    private String tipo;
+    protected int x1,x2,y1,y2;
+    protected String tipo;
     public CasillaApuesta(int x1, int y1, int x2, int y2, String tipo) {
         this.x1 = x1;
         this.x2 = x2;
@@ -18,19 +18,19 @@ public class CasillaApuesta{
         this.y2 = y2;
         this.tipo = tipo;
     }
-    public int getx1(){
+    protected int getx1(){
         return this.x1;
     }
-    public int getx2(){
+    protected int getx2(){
         return this.x2;
     }
-    public int gety1(){
+    protected int gety1(){
         return this.y1;
     }
-    public int gety2(){
+    protected int gety2(){
         return this.y2;
     }
-    public String getTipo(){
-        return this.tipo;
+    protected void vaciarContenido(){
+        this.tipo = "";
     }
 }

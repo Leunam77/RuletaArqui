@@ -12,7 +12,7 @@ public abstract class Apuesta {
    
     public Apuesta() {
     }    
-    protected int calcularApuesta(){
+    protected int calcularApuesta(NumeroColorido casillaGanadora){
         int resultado = 0;
         return resultado;
     }

@@ -11,20 +11,36 @@ import java.util.Stack;
  * @author jmanu
  */
 public class DiecinueveYTreintaYSeis extends Apuesta{
-protected Stack<FichaApuesta> bolsaApuestas;
+protected Stack<Integer> bolsaApuestas;
     public DiecinueveYTreintaYSeis() {
         bolsaApuestas = new Stack<>();
     }
     @Override
-    protected int calcularApuesta(){
-        int resultado = 0;
+    protected int calcularApuesta(NumeroColorido casillaGanadora){
         int apuesta = 0;
-        while(bolsaApuestas.isEmpty()){
-            int monto = bolsaApuestas.firstElement().getMontoFicha();
-            int cantidad = bolsaApuestas.firstElement().getCantidadFicha();
-            apuesta += monto*cantidad*1;
-            bolsaApuestas.pop();
+        if(casillaGanadora.getNumero() >= 19 && casillaGanadora.getNumero() <= 36){
+            while (!bolsaApuestas.isEmpty()) {
+                int monto = bolsaApuestas.firstElement();
+                apuesta += monto * 1;
+                bolsaApuestas.pop();
+            }
         }
-        return resultado;
+        return apuesta;
+    }
+    protected void insertarApuesta(int apuesta){
+        this.bolsaApuestas.push((Integer)apuesta);
+    }
+    protected String contenido(){
+        String res = "";
+        Stack<Integer> copia = new Stack<>();
+        copia.addAll(bolsaApuestas);
+        while(!copia.isEmpty()){
+            res += "[" + copia.peek() + " , " + "]";
+            copia.pop();
+        }
+        return res;
+    }
+    protected void vaciarPila(){
+        this.bolsaApuestas.clear();
     }
 }

@@ -53,7 +53,7 @@ public class Mesa{
     private ArrayList<CasillaApuesta> listaCasillaApuesta = new ArrayList<CasillaApuesta>(){{
         add(new CasillaApuesta(103,312,316,260,"primerDoce"));
         add(new CasillaApuesta(322,312,536,260,"segundoDoce"));
-        add(new CasillaApuesta(542,312,756,260,"terceDoce"));
+        add(new CasillaApuesta(542,312,756,260,"tercerDoce"));
         add(new CasillaApuesta(103,368,207,316,"unoYDieciocho"));
         add(new CasillaApuesta(652,368,756,316,"diecinueveTreintaYSeis"));
         add(new CasillaApuesta(212,368,316,316,"impar"));
@@ -65,51 +65,97 @@ public class Mesa{
         add(new CasillaApuesta(761,101,810,31,"columnaDerecha"));
     }};
     
-    private Rojo apuestaRojo;
-    private Negro apuestaNegro;
-    private Pleno apuestaPleno;
+    protected Pleno apuestaPleno;
+    protected Par apuestaPar;
+    protected Impar apuestaImpar;
+    protected Negro apuestaNegro;
+    protected Rojo apuestaRojo;
+    protected PrimerDoce apuestaPrimerDoce;
+    protected SegundoDoce apuestaSegundoDoce;
+    protected TercerDoce apuestaTercerDoce;
+    protected DiecinueveYTreintaYSeis apuesta1936;
+    protected UnoYDieciocho apuesta118;
+    protected ColumnaIzquierda apuestaColIz;
+    protected ColumnaCentral apuestaColCen;
+    protected ColumnaDerecha apuestaColDer;
     
+    protected Casilla apuestaRealizadaPleno;
+    protected CasillaApuesta apuestaEspecial;
+    
+    protected boolean esSeleccionEspcial;
 
     public Mesa() {
-        //this.apuestaRojo = apuestaRojo;
-        //this.apuestaNegro = apuestaNegro;
+        this.apuestaEspecial = new CasillaApuesta(0, 0, 0, 0, "");
+        this.apuestaRealizadaPleno = new Casilla(0, 0, 0, 0, "", new NumeroColorido(0,""));
+        this.apuestaPleno = new Pleno();
+        this.apuestaNegro = new Negro();
+        this.apuestaRojo = new Rojo();
+        this.apuestaImpar = new Impar();
+        this.apuestaPar = new Par();
+        this.apuestaPrimerDoce = new PrimerDoce();
+        this.apuestaSegundoDoce = new SegundoDoce();
+        this.apuestaTercerDoce = new TercerDoce();
+        this.apuesta118 = new UnoYDieciocho();
+        this.apuesta1936 = new DiecinueveYTreintaYSeis();
+        this.apuestaColIz = new ColumnaIzquierda();
+        this.apuestaColCen = new ColumnaCentral();
+        this.apuestaColDer = new ColumnaDerecha();
+        
+        this.esSeleccionEspcial = false;
+        
     }
-    public NumeroColorido buscarApuestaPleno(int x, int y){
-        NumeroColorido res = new NumeroColorido(0, "");
+    protected Casilla buscarApuestaPleno(int x, int y){
+        Casilla seleccionCasilla = new Casilla(0,0, 0, 0, "", new NumeroColorido(0, ""));
         for (int i = 0; i < listaCasilla.size();i++) {
             int x1 = listaCasilla.get(i).getx1();
             int x2 = listaCasilla.get(i).getx2();
             int y1 = listaCasilla.get(i).gety1();
             int y2 =  listaCasilla.get(i).gety2();
             if((x >= x1 && x <= x2) && (y >= y2 && y <= y1)){
-                res = listaCasilla.get(i).getPlenoMesa();
+                seleccionCasilla = listaCasilla.get(i);
                 i = listaCasilla.size()+1;
             }
         }
-        return res ;
+        return seleccionCasilla ;
     }
-    public String buscarApuestaEspecial(int x, int y){
-        String res = "";
+    public CasillaApuesta buscarApuestaEspecial(int x, int y){
+        CasillaApuesta seleccionCasillaA = new CasillaApuesta(0, 0, 0, 0, "");
         for (int i = 0; i < listaCasillaApuesta.size();i++) {
             int x1 = listaCasillaApuesta.get(i).getx1();
             int x2 = listaCasillaApuesta.get(i).getx2();
             int y1 = listaCasillaApuesta.get(i).gety1();
             int y2 =  listaCasillaApuesta.get(i).gety2();
             if((x >= x1 && x <= x2) && (y >= y2 && y <= y1)){
-                res = listaCasillaApuesta.get(i).getTipo();
+                seleccionCasillaA = listaCasillaApuesta.get(i);
                 i = listaCasilla.size()+1;
             }
         }
-        return res ;
+        return seleccionCasillaA ;
     }
-    public String buscarCasilla(int x, int y){
-        String res = "";
+    public void buscarCasilla(int x, int y){
         if((x >=23  && x <= 756) && (y >= 31 && y <= 254)){
-               NumeroColorido pleno = buscarApuestaPleno(x, y);
-               res = "Color: " + pleno.getColor() + " Numero: " + pleno.getNumero();
+            apuestaRealizadaPleno = buscarApuestaPleno(x, y);
+            esSeleccionEspcial = false;
         }else{
-            res = buscarApuestaEspecial(x, y);
+            apuestaEspecial = buscarApuestaEspecial(x, y);
+            esSeleccionEspcial = true;
         }
+    }
+    public int cacularGanancias(NumeroColorido casillaGanadora){
+        int res = 0;
+        res += apuestaPleno.calcularApuesta(casillaGanadora);
+        res += apuesta118.calcularApuesta(casillaGanadora);
+        res += apuesta1936.calcularApuesta(casillaGanadora);
+        res += apuestaColCen.calcularApuesta(casillaGanadora);
+        res += apuestaColDer.calcularApuesta(casillaGanadora);
+        res += apuestaColIz.calcularApuesta(casillaGanadora);
+        res += apuestaImpar.calcularApuesta(casillaGanadora);
+        res += apuestaPar.calcularApuesta(casillaGanadora);
+        res += apuestaNegro.calcularApuesta(casillaGanadora);
+        res += apuestaRojo.calcularApuesta(casillaGanadora);
+        res += apuestaPrimerDoce.calcularApuesta(casillaGanadora);
+        res += apuestaSegundoDoce.calcularApuesta(casillaGanadora);
+        res += apuestaTercerDoce.calcularApuesta(casillaGanadora);
         return res;
     }
     

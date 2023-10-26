@@ -25,8 +25,10 @@ com\mycompany\ruletaeuropea\VentanaJuego.class
 com\mycompany\ruletaeuropea\ColumnaDerecha.class
 com\mycompany\ruletaeuropea\VentanaJuego$9.class
 com\mycompany\ruletaeuropea\VentanaJuego$1.class
+com\mycompany\ruletaeuropea\Jugada.class
 com\mycompany\ruletaeuropea\PrimerDoce.class
 com\mycompany\ruletaeuropea\UnoYDieciocho.class
+com\mycompany\ruletaeuropea\Jugador.class
 com\mycompany\ruletaeuropea\FichaApuesta.class
 com\mycompany\ruletaeuropea\Juego.class
 com\mycompany\ruletaeuropea\Impar.class

@@ -11,20 +11,47 @@ import java.util.Stack;
  * @author jmanu
  */
 public class ColumnaIzquierda extends Apuesta{
-   protected Stack<FichaApuesta> bolsaApuestas;
+   protected Stack<Integer> bolsaApuestas;
     public ColumnaIzquierda() {
         bolsaApuestas = new Stack<>();
     }
     @Override
-    protected int calcularApuesta(){
-        int resultado = 0;
+    protected int calcularApuesta(NumeroColorido casillaGanadora){
         int apuesta = 0;
-        while(bolsaApuestas.isEmpty()){
-            int monto = bolsaApuestas.firstElement().getMontoFicha();
-            int cantidad = bolsaApuestas.firstElement().getCantidadFicha();
-            apuesta += monto*cantidad*2;
-            bolsaApuestas.pop();
+        boolean estaEnValidos = estaLista(casillaGanadora.getNumero());
+        if(estaEnValidos){
+            while (!bolsaApuestas.isEmpty()) {
+                int monto = bolsaApuestas.firstElement();
+                apuesta += monto * 2;
+                bolsaApuestas.pop();
+            }
         }
-        return resultado;
-    } 
+        return apuesta;
+    }
+    protected boolean estaLista(int numero){
+        boolean res = false;
+        int[] listaValido = {1,4,7,10,13,16,19,22,25,28,31,34};
+        for(int valor : listaValido){
+            if(numero == valor){
+                res = true;
+            }
+        }
+        return res;
+    }
+    protected void insertarApuesta(int apuesta){
+        this.bolsaApuestas.push((Integer)apuesta);
+    }
+    protected String contenido(){
+        String res = "";
+        Stack<Integer> copia = new Stack<>();
+        copia.addAll(bolsaApuestas);
+        while(!copia.isEmpty()){
+            res += "[" + copia.peek() + " , " + "]";
+            copia.pop();
+        }
+        return res;
+    }
+    protected void vaciarPila(){
+        this.bolsaApuestas.clear();
+    }
 }
