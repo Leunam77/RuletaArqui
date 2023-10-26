@@ -18,6 +18,7 @@ public class Juego implements Jugada{
         this.jugador = new Jugador("Juan Manuel",5000,0);
         this.apuestasCerradas = false;
     }
+    
     @Override
     public Mesa getmesaJuego(){
         return this.mesaJuego;

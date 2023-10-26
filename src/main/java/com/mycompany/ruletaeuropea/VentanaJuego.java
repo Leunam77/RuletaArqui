@@ -5,6 +5,7 @@
 package com.mycompany.ruletaeuropea;
 
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,14 +18,21 @@ public class VentanaJuego extends javax.swing.JFrame {
      */
     private Ruleta juegoRuleta;
     private Juego juegoMesa; 
+    private String nombre ;
     public VentanaJuego() {
         initComponents();
         juegoRuleta = new Ruleta();
         juegoMesa = new Juego();
-        jLabel14.setText(juegoMesa.jugador.nombre);
+        //jLabel14.setText(juegoMesa.jugador.nombre);
         jLabel13.setText(Integer.toString(juegoMesa.jugador.dineroTotal));
     }
-
+    
+    
+    public void setNombre(String nombre){
+    this.nombre = nombre ;
+      jLabel14.setText(nombre);
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,13 +49,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -57,16 +66,18 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 0, 0));
         jButton2.setText("Girar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 410, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 130, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mesaRuletav2-transformed.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
         jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabel1MouseMoved(evt);
@@ -77,7 +88,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 6, 850, 390));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, -20, 870, 390));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -86,7 +97,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 402, 60, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 60, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha5.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -95,7 +106,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 402, 60, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 60, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha10.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -104,7 +115,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 402, 60, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, 60, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha20.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -113,7 +124,8 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 402, 60, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, 60, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 290, 290));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha50.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -122,31 +134,34 @@ public class VentanaJuego extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(611, 402, 60, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 360, 60, -1));
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel7");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
-
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("NOMBRE: ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 80, 30));
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("MONTO: ");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("jLabel13");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 60, -1));
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("jLabel14");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 150, 20));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tapete2.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 470));
+
+        jLabel7.setText("jLabel7");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 330, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 470));
 
@@ -154,9 +169,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved
-        int x = evt.getX();
-        int y = evt.getY();
-        jLabel7.setText("X: " + x + " ,Y: " + y);
+
     }//GEN-LAST:event_jLabel1MouseMoved
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -207,12 +220,17 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String imagePath = "C:\\Users\\jmanu\\Documents\\NetBeansProjects\\RuletaEuropea\\src\\main\\resources\\ruleta-03.gif";
+        ImageIcon icon = new ImageIcon(imagePath);
+        jLabel10.setIcon(icon);
+        
         juegoMesa.apuestasCerradas = true;
         juegoRuleta.generarNumero();
         int ganancias = juegoMesa.getmesaJuego().cacularGanancias(juegoRuleta.getCasillaGanadora());
         juegoMesa.jugador.sumarDinero(ganancias);
         jLabel13.setText(Integer.toString(juegoMesa.jugador.dineroTotal));
         JOptionPane.showMessageDialog(null, "Ganaste: " + ganancias);
+        jLabel10.setIcon(null);
         juegoMesa.limpiarApuestas();
         juegoMesa.apuestasCerradas = false;
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -255,6 +273,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

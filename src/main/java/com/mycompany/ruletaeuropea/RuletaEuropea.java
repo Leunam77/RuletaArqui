@@ -9,7 +9,9 @@
 package com.mycompany.ruletaeuropea;
 public class RuletaEuropea {
     public static void main(String[] args) {
-        VentanaJuego ventana = new VentanaJuego();
-        ventana.setVisible(true);
+        //VentanaJuego ventana = new VentanaJuego();
+        //ventana.setVisible(true);
+        Menu menu = new Menu();
+        menu.setVisible(true);
     }
 }
